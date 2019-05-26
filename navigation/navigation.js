@@ -1,44 +1,20 @@
-import React from 'react';
-import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
-import CustomIcons from 'react-native-vector-icons/FontAwesome';
-import Container from '../components/Layout/Container';
+import { 
+    createAppContainer,
+    createSwitchNavigator,
+} from 'react-navigation';
+import LoadingScreen from '../components/LoadingScreen';
+import AuthNavigator from './Auth';
+import AppNavigator from './App';
 
-const StackNavigator = createStackNavigator({
-    Example: {
-        screen: Container,
-        navigationOptions: {
-            title: 'Title',
-        }
-    },
-});
-
-export default createAppContainer(createBottomTabNavigator(
+const SwitchNavigator = createSwitchNavigator(
     {
-        btn1: StackNavigator,
-        btn2: StackNavigator,
-        btn3: StackNavigator,
+        AuthLoading: LoadingScreen,
+        App: AppNavigator,
+        Auth: AuthNavigator,
     },
     {
-        defaultNavigationOptions: ({ navigation }) => ({
-          tabBarIcon: ({ focused, horizontal, tintColor }) => {
-            const { routeName } = navigation.state;
-            let iconName;
-            if (routeName === 'btn1') {
-                iconName = 'align-right';
-            } else if (routeName === 'btn2') {
-                iconName = 'align-justify';
-            } else if (routeName === 'btn3') {
-                iconName = `align-left`;
-            }
-    
-            return <CustomIcons name={iconName} size={25} color={tintColor} />;
-          },
-        }),
-        tabBarOptions: {
-          activeTintColor: '#00a8ff',
-          inactiveTintColor: '#718093',
-          showLabel: false,
-          showIcon: true,
-        },
-      }
-));
+        initialRouteName: 'AuthLoading',
+    }
+);
+
+export default createAppContainer(SwitchNavigator);
