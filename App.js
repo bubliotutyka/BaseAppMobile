@@ -1,11 +1,14 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import Navigation from './navigation/navigation';
+import { Provider } from 'react-redux';
+import Store from './store/store';
 
 export default class App extends React.Component {
   render() {
     return (
-      <Navigation />
+      <Provider store={Store}>
+        <Navigation />
+      </Provider>
     );
   }
 }

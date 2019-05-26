@@ -1,12 +1,8 @@
 import React from 'react';
-import { 
-    ActivityIndicator,
-    AsyncStorage,
-    StyleSheet,
-    View,
-} from 'react-native';
+import { AsyncStorage } from 'react-native';
+import LoadingScreen from '../../components/LoadingScreen';
 
-export default class LoadingScreen extends React.Component {
+export default class Loading extends React.Component {
     constructor(props) {
         super(props);
         this._isLogin();
@@ -14,27 +10,13 @@ export default class LoadingScreen extends React.Component {
 
     _isLogin = async() => {
         // const userToken = await AsyncStorage.getItem('userToken');
-        const userToken = true;
+        const userToken = false;
         this.props.navigation.navigate(userToken ? 'App' : 'Auth');
     }
 
     render() {
         return(
-            <View style={styles.container}>
-                <ActivityIndicator 
-                    size="large"
-                    color="#00a8ff"
-                />
-            </View>
+            <LoadingScreen />
         )
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

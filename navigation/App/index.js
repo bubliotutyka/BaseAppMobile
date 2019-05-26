@@ -1,6 +1,5 @@
 import React from 'react';
 import { 
-    createStackNavigator,
     createAppContainer,
     createBottomTabNavigator,
 } from 'react-navigation';

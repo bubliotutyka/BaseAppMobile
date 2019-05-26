@@ -6,7 +6,9 @@ import {
 } from 'react-navigation';
 import CustomIcons from 'react-native-vector-icons/FontAwesome';
 import LoadingScreen from '../../components/LoadingScreen';
+import Theme from '../../styles/theme';
 
+const theme = Theme('light');
 
 const Login = createAppContainer(
     createStackNavigator({
@@ -30,7 +32,7 @@ const Register = createAppContainer(
     })
 );
 
-export default createAppContainer(
+const AuthNavigator = createAppContainer(
     createBottomTabNavigator(
         {
             Login,
@@ -51,11 +53,23 @@ export default createAppContainer(
             },
             }),
             tabBarOptions: {
-            activeTintColor: '#00a8ff',
-            inactiveTintColor: '#718093',
-            showLabel: false,
-            showIcon: true,
+                activeTintColor: theme.active,
+                inactiveTintColor: theme.inactive,
+                showLabel: false,
+                showIcon: true,
+                tabStyle: {
+                    backgroundColor: theme.backgroundColor,
+                },
+                style: {
+                    borderTopColor: theme.borderColor,
+                    shadowColor: theme.shadowColor,
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.8,
+                    shadowRadius: 3,
+                },
             },
         }
     )
 );
+
+export default AuthNavigator;
