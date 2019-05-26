@@ -1,6 +1,6 @@
 import Theme from '../styles/theme';
 
-const theme = Theme('dark');
+const theme = Theme('light');
 
 export const tabBarOptions = {
     activeTintColor: theme.active,
@@ -21,6 +21,7 @@ export const tabBarOptions = {
 };
 
 export const headerStyle = {
+    backgroundColor: theme.backgroundColor,
     borderBottomColor: theme.borderColor,
     shadowColor: theme.shadowColor,
     shadowOffset: { width: 0, height: 2 },
@@ -29,4 +30,4 @@ export const headerStyle = {
     elevation: 1,
 }
 
-export const headerTintColor = theme.inactive;
+export const headerTintColor = theme.fontColor;

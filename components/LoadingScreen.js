@@ -5,6 +5,7 @@ import {
     StyleSheet,
     View,
 } from 'react-native';
+import Color from '../styles/color';
 
 export default class LoadingScreen extends React.Component {
     render() {
@@ -22,7 +23,7 @@ export default class LoadingScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: Color.white,
         alignItems: 'center',
         justifyContent: 'center',
     },
