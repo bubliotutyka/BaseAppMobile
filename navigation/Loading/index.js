@@ -7,6 +7,17 @@ import {
 } from 'react-native';
 
 export default class LoadingScreen extends React.Component {
+    constructor(props) {
+        super(props);
+        this._isLogin();
+    }
+
+    _isLogin = async() => {
+        // const userToken = await AsyncStorage.getItem('userToken');
+        const userToken = true;
+        this.props.navigation.navigate(userToken ? 'App' : 'Auth');
+    }
+
     render() {
         return(
             <View style={styles.container}>

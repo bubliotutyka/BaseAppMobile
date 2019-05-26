@@ -5,34 +5,28 @@ import {
     createBottomTabNavigator,
 } from 'react-navigation';
 import CustomIcons from 'react-native-vector-icons/FontAwesome';
-import Container from '../../components/Layout/Container';
 
-const StackNavigator = createStackNavigator({
-    Example: {
-        screen: Container,
-        navigationOptions: {
-            title: 'Title',
-        }
-    },
-});
+import Button1 from './Button/Button_1';
+import Button2 from './Button/Button_2';
+import Button3 from './Button/Button_3';
 
 export default createAppContainer(
     createBottomTabNavigator(
         {
-            btn1: StackNavigator,
-            btn2: StackNavigator,
-            btn3: StackNavigator,
+            Button1,
+            Button2,
+            Button3,
         },
         {
             defaultNavigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused, horizontal, tintColor }) => {
                 const { routeName } = navigation.state;
                 let iconName;
-                if (routeName === 'btn1') {
+                if (routeName === 'Button1') {
                     iconName = 'align-right';
-                } else if (routeName === 'btn2') {
+                } else if (routeName === 'Button2') {
                     iconName = 'align-justify';
-                } else if (routeName === 'btn3') {
+                } else if (routeName === 'Button3') {
                     iconName = `align-left`;
                 }
 

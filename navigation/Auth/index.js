@@ -5,13 +5,13 @@ import {
     createBottomTabNavigator,
 } from 'react-navigation';
 import CustomIcons from 'react-native-vector-icons/FontAwesome';
-import Test from '../../components/Test';
+import LoadingScreen from '../../components/LoadingScreen';
 
 
 const Login = createAppContainer(
     createStackNavigator({
         Login: {
-            screen: Test,
+            screen: LoadingScreen,
             navigationOptions: {
                 title: 'Login',
             }
@@ -22,7 +22,7 @@ const Login = createAppContainer(
 const Register = createAppContainer(
     createStackNavigator({
         Register: {
-            screen: Test,
+            screen: LoadingScreen,
             navigationOptions: {
                 title: 'Register',
             }
