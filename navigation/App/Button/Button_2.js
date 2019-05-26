@@ -3,6 +3,7 @@ import {
     createAppContainer,
 } from 'react-navigation';
 import LoadingScreen from '../../../components/LoadingScreen';
+import { headerStyle, headerTintColor } from '../../options';
 
 export default createAppContainer(
     createStackNavigator(
@@ -11,6 +12,8 @@ export default createAppContainer(
                 screen: LoadingScreen,
                 navigationOptions: {
                     title: 'Page 2',
+                    headerStyle,
+                    headerTintColor,
                 }
             },
         }

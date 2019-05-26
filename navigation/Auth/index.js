@@ -6,9 +6,11 @@ import {
 } from 'react-navigation';
 import CustomIcons from 'react-native-vector-icons/FontAwesome';
 import LoadingScreen from '../../components/LoadingScreen';
-import Theme from '../../styles/theme';
-
-const theme = Theme('light');
+import { 
+    tabBarOptions,
+    headerStyle,
+    headerTintColor
+} from '../options';
 
 const Login = createAppContainer(
     createStackNavigator({
@@ -16,6 +18,8 @@ const Login = createAppContainer(
             screen: LoadingScreen,
             navigationOptions: {
                 title: 'Login',
+                headerStyle,
+                headerTintColor,
             }
         },
     })
@@ -27,6 +31,8 @@ const Register = createAppContainer(
             screen: LoadingScreen,
             navigationOptions: {
                 title: 'Register',
+                headerStyle,
+                headerTintColor,
             }
         },
     })
@@ -52,22 +58,7 @@ const AuthNavigator = createAppContainer(
                 return <CustomIcons name={iconName} size={25} color={tintColor} />;
             },
             }),
-            tabBarOptions: {
-                activeTintColor: theme.active,
-                inactiveTintColor: theme.inactive,
-                showLabel: false,
-                showIcon: true,
-                tabStyle: {
-                    backgroundColor: theme.backgroundColor,
-                },
-                style: {
-                    borderTopColor: theme.borderColor,
-                    shadowColor: theme.shadowColor,
-                    shadowOffset: { width: 0, height: 2 },
-                    shadowOpacity: 0.8,
-                    shadowRadius: 3,
-                },
-            },
+            tabBarOptions,
         }
     )
 );

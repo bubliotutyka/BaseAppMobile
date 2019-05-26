@@ -4,6 +4,7 @@ import {
     createBottomTabNavigator,
 } from 'react-navigation';
 import CustomIcons from 'react-native-vector-icons/FontAwesome';
+import { tabBarOptions } from '../options';
 
 import Button1 from './Button/Button_1';
 import Button2 from './Button/Button_2';
@@ -32,12 +33,7 @@ export default createAppContainer(
                 return <CustomIcons name={iconName} size={25} color={tintColor} />;
             },
             }),
-            tabBarOptions: {
-            activeTintColor: '#00a8ff',
-            inactiveTintColor: '#718093',
-            showLabel: false,
-            showIcon: true,
-            },
+            tabBarOptions,
         }
     )
 );

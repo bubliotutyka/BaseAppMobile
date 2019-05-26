@@ -10,7 +10,7 @@ export default class Loading extends React.Component {
 
     _isLogin = async() => {
         // const userToken = await AsyncStorage.getItem('userToken');
-        const userToken = false;
+        const userToken = true;
         this.props.navigation.navigate(userToken ? 'App' : 'Auth');
     }
 
