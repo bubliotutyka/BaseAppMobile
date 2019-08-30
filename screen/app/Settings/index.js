@@ -5,9 +5,11 @@ import {
 import { connect } from 'react-redux';
 
 // Local Import
-import S from './style';
+import Style from './style';
 import {userLogout, toggleTheme} from '../../../redux/action/UserAction';
 import Button from '../../../components/Button';
+
+import HeaderStyle from '../../../navigation/App/Button/style';
 
 const mapStateToProps = state => {
   return { user: state.user };
@@ -24,7 +26,13 @@ class SettingScreen extends React.Component {
     this.props.navigation.navigate("AuthLoading");
   }
 
+  handleToggleTheme = async () => {
+    await this.props.toggleTheme();
+  }
+
   render() {
+    const S = Style();
+
     return(
       <View style={S.container}>
 
@@ -41,7 +49,7 @@ class SettingScreen extends React.Component {
 
           <Button
             label="toggle theme"
-            onPress={() => this.props.toggleTheme()}
+            onPress={this.handleToggleTheme}
           />
 
         </View>

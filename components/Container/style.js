@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 // Local Import
-import Theme from '../../../assets/styles/Theme';
+import Theme from '../../assets/styles/Theme';
 
 const getStyle = (options = {}) => {
   const theme = Theme.getTheme();
@@ -9,10 +9,9 @@ const getStyle = (options = {}) => {
   return StyleSheet.create({
     container: {
       flex: 1,
+      width: "100%",
       alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: theme.backgroundColor,
-    },
+  },
   });
 }
 

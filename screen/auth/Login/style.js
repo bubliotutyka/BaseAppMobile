@@ -1,45 +1,49 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
-// Import Local
-import Color from '../../../assets/styles/Color';
+// Local Import
+import Theme from '../../../assets/styles/Theme';
 
-const styles = StyleSheet.create({
-  container: {
+const getStyle = (options = {}) => {
+  const theme = Theme.getTheme();
+
+  return StyleSheet.create({
+    container: {
       flex: 4,
       width: "100%",
       alignItems: 'center',
       marginTop: 50,
-  },
+    },
 
-  scrollContainer: {
-    flex: 1,
-    width: "100%",
-    flexDirection: "column",
-  },
+    scrollContainer: {
+      flex: 1,
+      width: "100%",
+      flexDirection: "column",
+      backgroundColor: theme.backgroundColor,
+    },
 
-  scrollContent: {
-    alignItems: 'center',
-    paddingVertical: 100,
-  },
+    scrollContent: {
+      alignItems: 'center',
+      paddingVertical: 100,
+    },
 
-  spaceTop: {
-    flex: 1,
-  },
+    spaceTop: {
+      flex: 1,
+    },
 
-  spaceBottom: {
-    flex: 1,
-  },
+    spaceBottom: {
+      flex: 1,
+    },
 
-  textError: {
-    color: Color.red,
-  },
+    textError: {
+      color: theme.fontColorError,
+    },
 
-  image: {
-    flex: 3,
-    width: 100,
-    height: 155,
-  },
-});
+    image: {
+      flex: 3,
+      width: 100,
+      height: 155,
+    },
+  });
+}
 
-// Export
-export default styles;
+export default getStyle;

@@ -2,19 +2,12 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 // Local Import
-import Color from '../../assets/styles/Color';
-
-const S = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: "100%",
-        backgroundColor: Color.lightGrey,
-        alignItems: 'center',
-    },
-});
+import Style from './style';
 
 class Container extends React.Component {
     render() {
+        const S = Style();
+
         return (
             <View style={S.container}>
                 {this.props.children}

@@ -7,7 +7,7 @@ import {
 import { connect } from 'react-redux';
 
 // Local Import
-import S from './style';
+import Style from './style';
 import {userConnect} from '../../../redux/action/UserAction';
 import Container from '../../../components/Container';
 import Input from '../../../components/Input';
@@ -41,6 +41,7 @@ class LoginScreen extends React.Component {
 
   render() {
     const {isLoading, email, emailError, password, passwordError} = this.state;
+    const S = Style();
 
     if (isLoading) {
       return (

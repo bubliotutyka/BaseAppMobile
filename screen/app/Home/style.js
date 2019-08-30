@@ -1,16 +1,19 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 // Local Import
-import Color from '../../../assets/styles/Color';
+import Theme from '../../../assets/styles/Theme';
 
-const styles = StyleSheet.create({
-  container: {
+const getStyle = (options = {}) => {
+  const theme = Theme.getTheme();
+
+  return StyleSheet.create({
+    container: {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      // backgroundColor: Color.lightGrey,
-  },
-});
+      backgroundColor: theme.backgroundColor,
+    },
+  });
+}
 
-// Export
-export default styles;
+export default getStyle;

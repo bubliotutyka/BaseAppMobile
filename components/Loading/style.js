@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 // Local Import
-import Theme from '../../../assets/styles/Theme';
+import Theme from '../../assets/styles/Theme';
 
 const getStyle = (options = {}) => {
   const theme = Theme.getTheme();
@@ -11,8 +11,7 @@ const getStyle = (options = {}) => {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: theme.backgroundColor,
-    },
+  },
   });
 }
 

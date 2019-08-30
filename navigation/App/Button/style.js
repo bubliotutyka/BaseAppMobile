@@ -1,15 +1,18 @@
 // Local Import
-import Color from '../../../assets/styles/Color';
 import Theme from '../../../assets/styles/Theme';
 
-const styles = {
-  headerTintColor: Color.darkGrey,
-  // headerTransparent: false,
-  headerStyle: {
-    backgroundColor: Color.lightGrey,
-    ...Color.shadow,
+const getStyle = (options = {}) => {
+  const theme = Theme.getTheme();
+
+  return {
+    headerTintColor: theme.header.icon,
+    // headerTransparent: false,
+    headerStyle: {
+      backgroundColor: theme.header.background,
+      ...theme.shadow,
+    }
   }
 }
 
 // Export
-export default styles;
+export default getStyle;

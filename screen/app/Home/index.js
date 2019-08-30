@@ -5,7 +5,7 @@ import {
 import { connect } from 'react-redux';
 
 // Local Import
-import S from './style';
+import Style from './style';
 import Checkbox from '../../../components/CheckBox';
 
 const mapStateToProps = state => {
@@ -33,6 +33,7 @@ class MapScreen extends React.Component {
 
   render() {
     const {checked} = this.state;
+    const S = Style();
 
     return(
       <View style={S.container}>

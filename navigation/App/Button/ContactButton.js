@@ -14,7 +14,7 @@ const Button =  createAppContainer(
                 screen: ContactScreen,
                 navigationOptions: {
                     title: 'Contact',
-                    ...Style,
+                    ...Style(),
                 }
             },
         }

@@ -15,7 +15,6 @@ class Button extends React.Component {
     render() {
       const {onPress, label, checked, leftLabel} = this.props;
       const theme = Theme.getTheme();
-      console.log(theme);
       const S = Style();
 
       return (

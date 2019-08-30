@@ -6,7 +6,8 @@ import {
 import CustomIcons from 'react-native-vector-icons/FontAwesome';
 
 // Local Import
-import Color from '../../assets/styles/Color';
+import DarkTheme from '../../assets/styles/themes/dark';
+import LightTheme from '../../assets/styles/themes/light';
 import Theme from '../../assets/styles/Theme';
 import Button1 from './Button/HomeButton';
 import Button2 from './Button/ContactButton';
@@ -50,6 +51,15 @@ const AppNavigator = createAppContainer(
         }
     )
 );
+
+// activeTintColor: {
+//     light: LightTheme.active,
+//     dark: DarkTheme.active,
+// },
+// inactiveTintColor: {
+//     light: LightTheme.inactive,
+//     dark: DarkTheme.inactive,
+// },
 
 // Export
 export default AppNavigator;

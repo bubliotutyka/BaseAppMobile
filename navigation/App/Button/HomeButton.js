@@ -14,7 +14,7 @@ const Button = createAppContainer(
                 screen: HomeScreen,
                 navigationOptions: {
                     title: 'Home',
-                    ...Style,
+                    ...Style(),
                 }
             },
         }

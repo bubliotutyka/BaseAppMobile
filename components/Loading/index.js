@@ -7,19 +7,12 @@ import {
 
 // Local Import
 import Theme from '../../assets/styles/Theme';
+import Style from './style';
 
 class Loading extends React.Component {
     render() {
         const theme = Theme.getTheme();
-
-        const S = StyleSheet.create({
-            container: {
-                flex: 1,
-                // backgroundColor: Color.lightGrey,
-                alignItems: 'center',
-                justifyContent: 'center',
-            },
-        });
+        const S = Style();
 
         return(
             <View style={S.container}>

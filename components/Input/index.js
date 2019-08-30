@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 // Local Import
 import Style from './style.js';
-import Color from '../../assets/styles/Color';
+import Theme from '../../assets/styles/Theme';
 
 const mapStateToProps = state => {
   return { user: state.user };
@@ -38,6 +38,8 @@ class Input extends React.Component {
         inputStyle,
       });
 
+      const theme = Theme.getTheme();
+
       return (
         <View style={S.container}>
           {label && this.getLabel()}
@@ -46,6 +48,7 @@ class Input extends React.Component {
             <TextInput 
               style={S.input}
               placeholder={placeholder}
+              placeholderTextColor={theme.placeholder}
               secureTextEntry={secureTextEntry}
               editable={editable}
               maxLength={maxLength || 999999}

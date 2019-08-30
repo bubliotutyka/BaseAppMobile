@@ -1,16 +1,18 @@
 import React from 'react';
-import Navigation from './navigation/navigation';
+import MainApp from './screen/MainApp';
 import { Provider } from 'react-redux';
 
 // Local Import
 import Store from './redux/store';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <Provider store={Store}>
-        <Navigation />
+        <MainApp />
       </Provider>
     );
   }
 }
+
+export default App;

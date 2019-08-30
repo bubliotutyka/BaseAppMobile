@@ -1,56 +1,22 @@
 // Import Local
-import Color from './Color';
+import lightTheme from './themes/light';
+import darkTheme from './themes/dark';
 
 class Theme {
-  static themeStyle = 'light';
-
-  static _lightTheme = {
-    active: Color.darkOrange,
-    inactive: Color.darkGrey,
-    tabBarBackgroundColor: Color.lightGrey,
-
-    fontColor: Color.darkGrey,
-    fontColorError: Color.red,
-    backgroundColor: Color.white,
-
-    checkbox: Color.darkOrange,
-
-    borderColor: Color.darkOrange,
-    shadowColor: Color.grey,
-    buttonTextColor: Color.white,
-
-    shadow: Color.shadow,
-    hoverHhadow: Color.hoverShadow,
-  }
-
-  static _darkTheme = {
-    active: Color.darkPurple,
-    inactive: Color.darkGrey,
-    tabBarBackgroundColor: Color.lightGrey,
-
-    fontColor: Color.darkGrey,
-    fontColorError: Color.red,
-    backgroundColor: Color.white,
-
-    checkbox: Color.darkPurple,
-
-    borderColor: Color.darkPurple,
-    shadowColor: Color.grey,
-    buttonTextColor: Color.white,
-
-    shadow: Color.shadow,
-    hoverHhadow: Color.hoverShadow,
-  }
+  static _themeStyle = 'dark';
+  static _lightTheme = lightTheme;
+  static _darkTheme = darkTheme;
 
   static getTheme = () => {
-    return this[`_${this.themeStyle}Theme`];
+    return this[`_${this._themeStyle}Theme`];
   }
 
   static setTheme = (newTheme) => {
-    this.themeStyle = newTheme
+    this._themeStyle = newTheme
   }
 }
 
 // Export
 export default Theme;
 
+// https://medium.com/@hmajid2301/theme-your-expo-app-with-redux-and-react-navigation-461020e5fc1e

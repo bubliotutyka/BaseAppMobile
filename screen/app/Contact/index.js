@@ -6,7 +6,7 @@ import {
 import { connect } from 'react-redux';
 
 // Local Import
-import S from './style';
+import Style from './style';
 import Loading from '../../../components/Loading';
 
 const mapStateToProps = state => {
@@ -23,6 +23,8 @@ class ContactScreen extends React.Component {
   }
 
   render = () => {
+    const S = Style();
+    
     return(
       <View style={S.container}>
 

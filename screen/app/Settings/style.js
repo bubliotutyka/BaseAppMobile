@@ -1,34 +1,32 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 // Local Import
-import Color from '../../../assets/styles/Color';
+import Theme from '../../../assets/styles/Theme';
 
-const btnBox = {
-  width: '100%',
-  height: 50,
-}
+const getStyle = (options = {}) => {
+  const theme = Theme.getTheme();
 
-const styles = StyleSheet.create({
-  container: {
+  return StyleSheet.create({
+    container: {
       flex: 1,
       width: "100%",
       alignItems: 'center',
       // justifyContent: 'center',
-      // backgroundColor: Color.lightGrey,
-  },
+      backgroundColor: theme.backgroundColor,
+    },
 
-  logoutBtn: {
-    width: '100%',
-    height: 100,
-    paddingTop: 50,
-  },
+    logoutBtn: {
+      width: '100%',
+      height: 100,
+      paddingTop: 50,
+    },
 
-  debugBtn: {
-    width: '100%',
-    height: 75,
-    paddingTop: 25,
-  },
-});
+    debugBtn: {
+      width: '100%',
+      height: 75,
+      paddingTop: 25,
+    },
+  });
+}
 
-// Export
-export default styles;
+export default getStyle;
