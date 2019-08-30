@@ -4,12 +4,22 @@ import {
   ScrollView,
   Image,
 } from 'react-native';
+import { connect } from 'react-redux';
 
 // Local Import
 import S from './style';
+import {userConnect} from '../../../redux/action/UserAction';
 import Container from '../../../components/Container';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
+
+const mapStateToProps = state => {
+  return { user: state.user };
+}
+
+const mapDispatchToProps = dispatch => ({
+  userConnect: payload => dispatch(userConnect(payload)),
+});
 
 class LoginScreen extends React.Component {
   state = {
@@ -21,7 +31,8 @@ class LoginScreen extends React.Component {
   }
 
   handleButton = async() => {
-    console.log('Login push');
+    this.props.userConnect({});
+    this.props.navigation.navigate("AuthLoading");
   }
 
   handleChange = (text, name) => {
@@ -30,7 +41,7 @@ class LoginScreen extends React.Component {
 
   render() {
     const {isLoading, email, emailError, password, passwordError} = this.state;
-
+    
     if (isLoading) {
       return (
         <Loading />
@@ -89,4 +100,4 @@ class LoginScreen extends React.Component {
 }
 
 // Export
-export default LoginScreen;
+export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
