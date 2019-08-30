@@ -18,7 +18,7 @@ class Loading extends React.Component {
   }
 
   componentDidMount = async () => {
-    let {isLogin, token} = this.props.user;
+    let {isLogin, token, theme} = this.props.user;
     // const eToken = await SecureStore.getItemAsync('eToken');
 
     const d = new Date();
@@ -27,6 +27,7 @@ class Loading extends React.Component {
     console.log(`User connect on "${Platform.OS}" at ${date}`);
     console.log('Token:', token);
     console.log(`Status: ${isLogin ? 'connect' : 'disconnect'}`);
+    console.log('Theme:', theme);
     console.log('====================================');
     
     this.props.navigation.navigate(isLogin ? 'App' : 'Auth');

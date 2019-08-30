@@ -1,24 +1,56 @@
 // Import Local
 import Color from './Color';
 
-const lightTheme = {
+class Theme {
+  static themeStyle = 'light';
+
+  static _lightTheme = {
     active: Color.darkOrange,
-    inactive: Color.grey,
+    inactive: Color.darkGrey,
+    tabBarBackgroundColor: Color.lightGrey,
+
+    fontColor: Color.darkGrey,
+    fontColorError: Color.red,
     backgroundColor: Color.white,
-    borderColor: Color.lightGrey,
+
+    checkbox: Color.darkOrange,
+
+    borderColor: Color.darkOrange,
     shadowColor: Color.grey,
-}
+    buttonTextColor: Color.white,
 
-const darkTheme = {
+    shadow: Color.shadow,
+    hoverHhadow: Color.hoverShadow,
+  }
 
+  static _darkTheme = {
+    active: Color.darkPurple,
+    inactive: Color.darkGrey,
+    tabBarBackgroundColor: Color.lightGrey,
+
+    fontColor: Color.darkGrey,
+    fontColorError: Color.red,
+    backgroundColor: Color.white,
+
+    checkbox: Color.darkPurple,
+
+    borderColor: Color.darkPurple,
+    shadowColor: Color.grey,
+    buttonTextColor: Color.white,
+
+    shadow: Color.shadow,
+    hoverHhadow: Color.hoverShadow,
+  }
+
+  static getTheme = () => {
+    return this[`_${this.themeStyle}Theme`];
+  }
+
+  static setTheme = (newTheme) => {
+    this.themeStyle = newTheme
+  }
 }
 
 // Export
-export default (theme) => {
-    if (theme === 'dark') {
-        return darkTheme;
-    }
-    else if (theme === 'light') {
-        return lightTheme;
-    }
-}
+export default Theme;
+

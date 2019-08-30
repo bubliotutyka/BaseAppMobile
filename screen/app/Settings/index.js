@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 // Local Import
 import S from './style';
-import {userLogout} from '../../../redux/action/UserAction';
+import {userLogout, toggleTheme} from '../../../redux/action/UserAction';
 import Button from '../../../components/Button';
 
 const mapStateToProps = state => {
@@ -14,12 +14,13 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  userLogout: payload => dispatch(userLogout(payload)),
+  userLogout: payload => dispatch(userLogout(payload || {})),
+  toggleTheme: payload => dispatch(toggleTheme(payload || {})),
 });
 
 class SettingScreen extends React.Component {
   handleLogout = async () => {
-    this.props.userLogout({});
+    this.props.userLogout();
     this.props.navigation.navigate("AuthLoading");
   }
 
@@ -32,6 +33,15 @@ class SettingScreen extends React.Component {
           <Button
             label="Logout"
             onPress={this.handleLogout}
+          />
+
+        </View>
+
+        <View style={S.logoutBtn}>
+
+          <Button
+            label="toggle theme"
+            onPress={() => this.props.toggleTheme()}
           />
 
         </View>

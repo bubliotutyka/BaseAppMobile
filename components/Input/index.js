@@ -1,22 +1,26 @@
 import React from 'react';
 import { StyleSheet, View, TextInput, Text } from 'react-native';
+import { connect } from 'react-redux';
 
 // Local Import
+import Style from './style.js';
 import Color from '../../assets/styles/Color';
+
+const mapStateToProps = state => {
+  return { user: state.user };
+}
 
 class Input extends React.Component {
   getLabel = () => {
+    const S = Style();
+
     return (
-      <Text>{this.props.label}</Text>
+      <Text style={S.label}>{this.props.label}</Text>
     );
   }
 
   getError = () => {
-    const S = StyleSheet.create({
-      text: {
-        color: Color.red,
-      },
-    });
+    const S = Style();
 
     return (
       <Text style={S.text}>{this.props.error}</Text>
@@ -29,36 +33,9 @@ class Input extends React.Component {
         containerStyle, keyboardType, value, inputStyle, error, autoCompleteType,
       } = this.props;
 
-      const S = StyleSheet.create({
-        container: {
-            width: 200,
-            height: 50,
-            justifyContent: 'center',
-            ...containerStyle,
-        },
-
-        input: {
-          width: '100%',
-          fontSize: 20,
-          color: Color.darkGrey,
-          ...inputStyle,
-        },
-
-        inputContainer: {
-          marginTop: 5,
-          marginBottom: 5,
-          paddingLeft: 15,
-          paddingRight: 15,
-          paddingBottom: 5,
-          borderColor: Color.darkOrange,
-          borderBottomWidth: 3,
-          flexDirection: 'row',
-          width: '100%',
-        },
-
-        text: {
-          fontSize: 20,
-        },
+      const S = Style({
+        containerStyle,
+        inputStyle,
       });
 
       return (
@@ -85,4 +62,4 @@ class Input extends React.Component {
 }
 
 // Export
-export default Input;
+export default connect(mapStateToProps)(Input);

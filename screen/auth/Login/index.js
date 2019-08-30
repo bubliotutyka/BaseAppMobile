@@ -41,7 +41,7 @@ class LoginScreen extends React.Component {
 
   render() {
     const {isLoading, email, emailError, password, passwordError} = this.state;
-    
+
     if (isLoading) {
       return (
         <Loading />
@@ -64,7 +64,6 @@ class LoginScreen extends React.Component {
 
           <View style={S.container}>
             <Input 
-              containerStyle={{width: "80%", marginBottom: 30}}
               placeholder="Email"
               label="Email"
               onChangeText={(text) => this.handleChange(text, "email")}
@@ -75,7 +74,6 @@ class LoginScreen extends React.Component {
             />
 
             <Input 
-              containerStyle={{width: "80%", marginBottom: 30}}
               placeholder="Password"
               label="Password"
               onChangeText={(text) => this.handleChange(text, "password")}

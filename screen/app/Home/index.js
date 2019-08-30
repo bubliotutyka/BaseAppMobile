@@ -1,15 +1,26 @@
 import React from 'react';
 import {
   View,
-  Text,
 } from 'react-native';
+import { connect } from 'react-redux';
 
 // Local Import
 import S from './style';
+import Checkbox from '../../../components/CheckBox';
+
+const mapStateToProps = state => {
+  return { user: state.user };
+}
+
 
 class MapScreen extends React.Component {
   state = {
-    
+    checked: false,
+  }
+
+  handleCheckbox = () => {
+    const {checked} = this.state;
+    this.setState({checked: !checked});
   }
 
   componentDidMount = async () => {
@@ -21,10 +32,16 @@ class MapScreen extends React.Component {
   }
 
   render() {
+    const {checked} = this.state;
+
     return(
       <View style={S.container}>
         
-        <Text>Home screen</Text>
+        <Checkbox
+          leftLabel="example"
+          checked={checked}
+          onPress={this.handleCheckbox}
+        />
 
       </View>
     )
@@ -32,4 +49,4 @@ class MapScreen extends React.Component {
 }
 
 // Export
-export default MapScreen;
+export default connect(mapStateToProps)(MapScreen);

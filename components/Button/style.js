@@ -1,32 +1,35 @@
 import {StyleSheet} from 'react-native';
 
-// Import Local
-import Color from '../../assets/styles/Color';
+// Local Import
+import Theme from '../../assets/styles/Theme';
 
-const padding = 20;
+const getStyle = (options = {}) => {
+  const theme = Theme.getTheme();
+  const padding = 20;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: "100%",
-    alignItems: 'center',
-  },
-
-  buttonContainer: {
-    paddingTop: padding / 3,
-    paddingBottom: padding / 3,
-    paddingLeft: padding,
-    paddingRight: padding,
-    backgroundColor: Color.darkOrange,
-    borderRadius: 100,
-    ...Color.shadow,
-  },
-
-  text: {
-    fontSize: 20,
-    color: Color.white,
-  },
-});
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      width: "100%",
+      alignItems: 'center',
+    },
+  
+    buttonContainer: {
+      paddingTop: padding / 3,
+      paddingBottom: padding / 3,
+      paddingLeft: padding,
+      paddingRight: padding,
+      backgroundColor: theme.borderColor,
+      borderRadius: 20,
+      ...theme.shadow,
+    },
+  
+    text: {
+      fontSize: 20,
+      color: theme.buttonTextColor,
+    },
+  });
+}
 
 // Export
-export default styles;
+export default getStyle;

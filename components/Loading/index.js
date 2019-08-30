@@ -6,24 +6,26 @@ import {
 } from 'react-native';
 
 // Local Import
-import Color from '../../assets/styles/Color';
-
-const S = StyleSheet.create({
-    container: {
-        flex: 1,
-        // backgroundColor: Color.lightGrey,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
+import Theme from '../../assets/styles/Theme';
 
 class Loading extends React.Component {
     render() {
+        const theme = Theme.getTheme();
+
+        const S = StyleSheet.create({
+            container: {
+                flex: 1,
+                // backgroundColor: Color.lightGrey,
+                alignItems: 'center',
+                justifyContent: 'center',
+            },
+        });
+
         return(
             <View style={S.container}>
                 <ActivityIndicator 
                     size="large"
-                    color={Color.darkOrange}
+                    color={theme.active}
                 />
             </View>
         )
@@ -32,3 +34,5 @@ class Loading extends React.Component {
 
 // Export
 export default Loading;
+
+

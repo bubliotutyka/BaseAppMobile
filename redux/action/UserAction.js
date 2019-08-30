@@ -11,3 +11,10 @@ export const userLogout = (payload) => {
     payload,
   };
 }
+
+export const toggleTheme = (payload) => {
+  return {
+    type: "TOGGLE_THEME",
+    payload,
+  };
+}

@@ -1,40 +1,50 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
-// Import Local
-import Color from '../../assets/styles/Color';
+// Local Import
+import Theme from '../../assets/styles/Theme';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: "100%",
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const getStyle = (options = {}) => {
+  const theme = Theme.getTheme();
 
-  checkboxContainer: {
-    flex: 1,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
+  return StyleSheet.create({
+    container: {
+      flex: 1,
+      width: "100%",
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  
+    checkboxContainer: {
+      flex: 1,
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'row',
+    },
+  
+    checkbox: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 24,
+      height: 24,
+      borderRadius: 2,
+      borderStyle: 'solid',
+      borderWidth: 2,
+      borderColor: theme.fontColor,
+    },
+  
+    label: {
+      color: theme.fontColor,
+      fontSize: 20,
+      marginRight: 10,
+    },
+  
+    leftLabel: {
+      color: theme.fontColor,
+      fontSize: 20,
+      marginLeft: 10,
+    },
+  });
+}
 
-  checkbox: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 24,
-    height: 24,
-    marginLeft: 10,
-    borderRadius: 2,
-    borderStyle: 'solid',
-    borderWidth: 2,
-    borderColor: Color.darkGrey,
-  },
-
-  text: {
-    fontSize: 20,
-  },
-});
-
-// Export
-export default styles;
+export default getStyle;

@@ -6,12 +6,12 @@ import {
 } from 'react-native';
 
 // Local Import
-import Color from '../../assets/styles/Color';
-import S from './style';
+import Style from './style';
 
 class Button extends React.Component {
     render() {
       const {onPress, label} = this.props;
+      const S = Style();
 
       return (
         <View style={S.container}>

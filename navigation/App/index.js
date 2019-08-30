@@ -7,9 +7,12 @@ import CustomIcons from 'react-native-vector-icons/FontAwesome';
 
 // Local Import
 import Color from '../../assets/styles/Color';
+import Theme from '../../assets/styles/Theme';
 import Button1 from './Button/HomeButton';
 import Button2 from './Button/ContactButton';
 import Button3 from './Button/SettingsButton';
+
+const theme = Theme.getTheme();
 
 const AppNavigator = createAppContainer(
     createBottomTabNavigator(
@@ -35,13 +38,13 @@ const AppNavigator = createAppContainer(
             },
             }),
             tabBarOptions: {
-                activeTintColor: Color.darkOrange,
-                inactiveTintColor: Color.darkGrey,
+                activeTintColor: theme.active,
+                inactiveTintColor: theme.inactive,
                 showLabel: false,
                 showIcon: true,
                 style: {
-                    backgroundColor: Color.lightGrey,
-                    ...Color.shadow,
+                    backgroundColor: theme.tabBarBackgroundColor,
+                    ...theme.shadow,
                 },
             },
         }

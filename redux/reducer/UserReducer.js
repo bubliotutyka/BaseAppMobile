@@ -1,8 +1,11 @@
+// Local Import
+import Theme from '../../assets/styles/Theme';
+
 let initialState = {
-  isLogin: false,
+  isLogin: true,
   isAdmin: false,
   token: null,
-  theme: null,
+  theme: "light",
 };
 
 export default (state = initialState, action) => {
@@ -10,19 +13,26 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case "USER_CONNECT":
       return {
+        ...state,
         isLogin: true,
         isAdmin: false,
         token:  "oui",
-        theme: null,
         ...action.payload, 
       };
 
     case "USER_LOGOUT":
       return {
+        ...state,
         isLogin: false,
         isAdmin: false,
         token: null,
-        theme: null,
+      };
+
+    case "TOGGLE_THEME":
+      Theme.setTheme(state.theme === "light" ? "dark" : "light");
+      return {
+        ...state,
+        theme: state.theme === "light" ? "dark" : "light",
       };
 
     default:
