@@ -1,22 +1,38 @@
 import React from 'react';
-import { AsyncStorage } from 'react-native';
-import LoadingScreen from '../../components/LoadingScreen';
+import {
+  Platform,
+} from 'react-native';
+import * as SecureStore from 'expo-secure-store';
 
-export default class Loading extends React.Component {
-    constructor(props) {
-        super(props);
-        this._isLogin();
-    }
+// Local Import
+import LoadingScreen from '../../components/Loading';
 
-    _isLogin = async() => {
-        // const userToken = await AsyncStorage.getItem('userToken');
-        const userToken = false;
-        this.props.navigation.navigate(userToken ? 'App' : 'Auth');
-    }
+class Loading extends React.Component {
+  state = {
+    error: "",
+  }
 
-    render() {
-        return(
-            <LoadingScreen />
-        )
-    }
+  componentDidMount = async () => {
+    let isLogin = true;
+    const eToken = await SecureStore.getItemAsync('eToken');
+    
+    const d = new Date();
+    const date = `${d.getHours()}h:${d.getMinutes()}m:${d.getSeconds()}s`;
+    console.log('====================================');
+    console.log(`User connect on "${Platform.OS}" at ${date}`);
+    console.log('eToken:', eToken);
+    console.log(`Status: ${isLogin ? 'connect' : 'disconnect'}`);
+    console.log('====================================');
+    
+    this.props.navigation.navigate(isLogin ? 'App' : 'Auth');
+  }
+
+  render() {
+    return(
+      <LoadingScreen error={this.state.error}/>
+    )
+  }
 }
+
+// Export
+export default Loading;

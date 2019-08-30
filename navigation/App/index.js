@@ -5,11 +5,13 @@ import {
 } from 'react-navigation';
 import CustomIcons from 'react-native-vector-icons/FontAwesome';
 
-import Button1 from './Button/Button_1';
-import Button2 from './Button/Button_2';
-import Button3 from './Button/Button_3';
+// Local Import
+import Color from '../../assets/styles/Color';
+import Button1 from './Button/HomeButton';
+import Button2 from './Button/ContactButton';
+import Button3 from './Button/SettingsButton';
 
-export default createAppContainer(
+const AppNavigator = createAppContainer(
     createBottomTabNavigator(
         {
             Button1,
@@ -22,22 +24,29 @@ export default createAppContainer(
                 const { routeName } = navigation.state;
                 let iconName;
                 if (routeName === 'Button1') {
-                    iconName = 'align-right';
+                    iconName = 'map';
                 } else if (routeName === 'Button2') {
-                    iconName = 'align-justify';
+                    iconName = 'comments';
                 } else if (routeName === 'Button3') {
-                    iconName = `align-left`;
+                    iconName = `cogs`;
                 }
 
                 return <CustomIcons name={iconName} size={25} color={tintColor} />;
             },
             }),
             tabBarOptions: {
-            activeTintColor: '#00a8ff',
-            inactiveTintColor: '#718093',
-            showLabel: false,
-            showIcon: true,
+                activeTintColor: Color.darkOrange,
+                inactiveTintColor: Color.darkGrey,
+                showLabel: false,
+                showIcon: true,
+                style: {
+                    backgroundColor: Color.lightGrey,
+                    ...Color.shadow,
+                },
             },
         }
     )
 );
+
+// Export
+export default AppNavigator;

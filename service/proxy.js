@@ -1,0 +1,1 @@
+export default "https://locatemeapi.herokuapp.com";
