@@ -12,9 +12,12 @@ const getStyle = (options = {}) => {
       flex: 1,
       width: "100%",
       alignItems: 'center',
+      justifyContent: 'center',
     },
   
     buttonContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
       paddingTop: padding / 3,
       paddingBottom: padding / 3,
       paddingLeft: padding,
@@ -22,11 +25,13 @@ const getStyle = (options = {}) => {
       backgroundColor: theme.borderColor,
       borderRadius: 20,
       ...theme.hoverShadow,
+      ...options.containerStyle,
     },
   
     text: {
       fontSize: 20,
       color: theme.buttonTextColor,
+      ...options.buttonStyle,
     },
   });
 }

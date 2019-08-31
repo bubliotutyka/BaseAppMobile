@@ -1,5 +1,5 @@
 import React from 'react';
-import MainApp from './screen/MainApp';
+import MainScreen from './screen/MainScreen';
 import { Provider } from 'react-redux';
 
 // Local Import
@@ -9,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={Store}>
-        <MainApp />
+        <MainScreen />
       </Provider>
     );
   }

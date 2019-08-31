@@ -58,6 +58,10 @@ class SettingScreen extends React.Component {
           <Button
             label="toggle theme"
             onPress={this.handleToggleTheme}
+            containerStyle={{
+              borderRadius: 0,
+              width: '70%',
+            }}
           />
 
         </View>

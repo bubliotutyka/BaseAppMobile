@@ -5,7 +5,7 @@ let initialState = {
   isLogin: true,
   isAdmin: false,
   token: null,
-  theme: "light",
+  theme: "dark",
 };
 
 export default (state = initialState, action) => {
