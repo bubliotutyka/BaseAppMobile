@@ -23,6 +23,7 @@ const theme = {
   tabBarBackgroundColor: Color.darkGrey,
   header: {
     icon: Color.lightGrey,
+    borderColor: Color.grey,
     background: Color.darkGrey,
   },
 }

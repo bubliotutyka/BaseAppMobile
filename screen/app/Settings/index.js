@@ -21,6 +21,13 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class SettingScreen extends React.Component {
+  static navigationOptions = ({ navigation, screenProps }) => {
+    return {
+      // title: 'Settings',
+      ...HeaderStyle(),
+    } 
+  }
+
   handleLogout = async () => {
     this.props.userLogout();
     this.props.navigation.navigate("AuthLoading");
@@ -28,6 +35,7 @@ class SettingScreen extends React.Component {
 
   handleToggleTheme = async () => {
     await this.props.toggleTheme();
+    this.props.navigation.navigate("AuthLoading", {themeUpdate: true});
   }
 
   render() {
@@ -50,6 +58,15 @@ class SettingScreen extends React.Component {
           <Button
             label="toggle theme"
             onPress={this.handleToggleTheme}
+          />
+
+        </View>
+
+        <View style={S.logoutBtn}>
+
+          <Button
+            label="Test header"
+            onPress={() => this.props.navigation.navigate('Test')}
           />
 
         </View>

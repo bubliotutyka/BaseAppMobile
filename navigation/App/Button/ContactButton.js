@@ -1,25 +1,23 @@
 import { 
-    createStackNavigator,
-    createAppContainer,
+  createStackNavigator,
+  createAppContainer,
 } from 'react-navigation';
 
 // Local Import
 import Style from './style';
 import ContactScreen from '../../../screen/app/Contact';
 
-const Button =  createAppContainer(
-    createStackNavigator(
-        {
-            Contact: {
-                screen: ContactScreen,
-                navigationOptions: {
-                    title: 'Contact',
-                    ...Style(),
-                }
-            },
-        }
-    )
+const Button =  createStackNavigator(
+  {
+    Contact: {
+      screen: ContactScreen,
+      navigationOptions: () => ({
+        title: 'Contact',
+        ...Style(),
+      }),
+    },
+  }
 );
 
 // Export
-export default Button;
+export default createAppContainer(Button);

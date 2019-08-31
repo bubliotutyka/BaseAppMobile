@@ -1,25 +1,28 @@
 import { 
-    createStackNavigator,
-    createAppContainer,
+  createStackNavigator,
+  createAppContainer,
 } from 'react-navigation';
 
 // Local Import
-import Style from './style';
+// import Style from './style';
 import SettingsScreen from '../../../screen/app/Settings';
 
-const Button = createAppContainer(
-    createStackNavigator(
-        {
-            Settings: {
-                screen: SettingsScreen,
-                navigationOptions: {
-                    title: 'Settings',
-                    ...Style(),
-                }
-            },
-        }
-    )
-);
+const Button = createStackNavigator(
+  {
+    Settings: {
+      screen: SettingsScreen,
+      navigationOptions: {
+        title: 'Settings',
+      },
+    },
+    Test: {
+      screen: SettingsScreen,
+      navigationOptions: {
+        title: 'Test',
+      },
+    },
+  }
+)
 
 // Export
-export default Button;
+export default createAppContainer(Button);

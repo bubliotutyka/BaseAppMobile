@@ -19,6 +19,12 @@ class Loading extends React.Component {
   componentWillMount = async () => {
     let {isLogin, token, theme} = this.props.user;
 
+    if (this.props.navigation.state.params) {
+      if (this.props.navigation.state.params.themeUpdate) {
+        this.props.navigation.navigate('Settings');
+      }
+    }
+
     const d = new Date();
     const date = `${d.getHours()}h:${d.getMinutes()}m:${d.getSeconds()}s`;
     console.log('====================================');

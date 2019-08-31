@@ -20,9 +20,10 @@ const theme = {
 
   shadow: Color.shadow,
   hoverShadow: Color.hoverShadow,
-
+  
   header: {
     icon: Color.darkGrey,
+    borderColor: Color.grey,
     background: Color.lightGrey,
   },
 }
