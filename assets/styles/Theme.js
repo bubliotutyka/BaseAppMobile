@@ -3,7 +3,7 @@ import lightTheme from './themes/light';
 import darkTheme from './themes/dark';
 
 class Theme {
-  static _themeStyle = 'dark';
+  static _themeStyle = 'light';
   static _lightTheme = lightTheme;
   static _darkTheme = darkTheme;
 

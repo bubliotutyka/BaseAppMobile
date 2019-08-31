@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "LocateMe",
-    "slug": "LocateMe",
+    "name": "BaseAppMobile",
+    "slug": "BaseAppMobile",
     "privacy": "public",
     "sdkVersion": "33.0.0",
     "platforms": [

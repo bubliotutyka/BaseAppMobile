@@ -21,7 +21,7 @@ const getStyle = (options = {}) => {
       paddingRight: padding,
       backgroundColor: theme.borderColor,
       borderRadius: 20,
-      ...theme.shadow,
+      ...theme.hoverShadow,
     },
   
     text: {

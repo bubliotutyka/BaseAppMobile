@@ -44,6 +44,10 @@ const getStyle = (options = {}) => {
       fontSize: 20,
       marginLeft: 10,
     },
+
+    checked: {
+      fontSize: 18,
+    },
   });
 }
 

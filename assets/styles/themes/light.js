@@ -19,7 +19,7 @@ const theme = {
   buttonTextColor: Color.white,
 
   shadow: Color.shadow,
-  hoverHhadow: Color.hoverShadow,
+  hoverShadow: Color.hoverShadow,
 
   header: {
     icon: Color.darkGrey,

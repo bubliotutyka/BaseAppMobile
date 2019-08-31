@@ -25,7 +25,7 @@ class Button extends React.Component {
           >
             {label && <Text style={S.label}>{label}</Text>}
             <View style={S.checkbox}>
-              {checked && <CustomIcons name="check" size={20} color={theme.checkbox} />}
+              {checked && <CustomIcons style={S.checked} name="check" size={20} color={theme.checkbox} />}
             </View>
             {leftLabel && <Text style={S.leftLabel}>{leftLabel}</Text>}
           </TouchableOpacity>

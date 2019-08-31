@@ -18,7 +18,7 @@ const theme = {
   buttonTextColor: Color.white,
 
   shadow: Color.shadow,
-  hoverHhadow: Color.hoverShadow,
+  hoverShadow: Color.hoverShadow,
 
   tabBarBackgroundColor: Color.darkGrey,
   header: {
